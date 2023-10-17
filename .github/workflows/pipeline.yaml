@@ -40,7 +40,6 @@ jobs:
         uses: anothrNick/github-tag-action@1.64.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEFAULT_BUMP : patch
 
       - name: Test Success
         uses: rjstone/discord-webhook-notify@v1.0.4
@@ -49,4 +48,3 @@ jobs:
             severity: info
             details: Test Succeeded!
             webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-            
