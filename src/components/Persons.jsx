@@ -1,4 +1,5 @@
 import personsService from "../services/persons";
+/* eslint-disable react/prop-types */
 const Persons = ({
   personsToShown,
   setPersons,
@@ -9,7 +10,9 @@ const Persons = ({
     if (window.confirm(`Delete ${name} ?`)) {
       personsService
         .remove(id)
+        /* eslint-disable react/prop-types */
         .then(setPersons(personsToShown.filter((p) => p.id != id)))
+        /* eslint-disable no-unused-vars */
         .catch((error) => {
           setNotificationMessage(
             `Information of '${name}' was already removed from server`
@@ -18,6 +21,7 @@ const Persons = ({
           setTimeout(() => {
             setNotificationMessage(null);
           }, 5000);
+          /* eslint-disable react/prop-types */
           setPersons(personsToShown.filter((p) => p.name !== name));
         });
     }
