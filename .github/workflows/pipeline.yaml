@@ -49,3 +49,4 @@ jobs:
             severity: info
             details: Test Succeeded!
             webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+            
