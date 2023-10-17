@@ -13,7 +13,7 @@ const App = () => {
   const [filter, setFilter] = useState("");
   const [notificationMessage, setNotificationMessage] = useState(null);
   const [notificationClass, setNotificationClass] = useState(null);
-  useEffect(() => {
+  useEffect(() => { 
     PersonsService.getAll().then((initialPersons) =>
       setPersons(initialPersons)
     );
@@ -37,6 +37,7 @@ const App = () => {
             setNotificationMessage(null);
           }, 5000);
         })
+        /* eslint-disable no-unused-vars */
         .catch((error) => {
           setNotificationMessage(
             `Information of '${updatedPerson.name}' was already removed from server`
